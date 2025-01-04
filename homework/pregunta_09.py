@@ -24,3 +24,18 @@ def pregunta_09():
      'jjj': 18}}
 
     """
+    cont = dict()
+    with open('files/input/data.csv') as f:
+        for linea in f:
+            d = linea.split()[-1].split(",")
+            for datos in d:
+                a,v = datos.split(":")
+                v = int(v)
+                if a not in cont:    cont[a] = 1
+                else:                cont[a] += 1
+        
+        resul = dict((sorted(cont.items())))
+
+    return resul
+
+#print(pregunta_09())

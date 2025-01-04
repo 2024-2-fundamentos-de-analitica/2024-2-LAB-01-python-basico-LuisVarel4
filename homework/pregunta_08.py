@@ -27,3 +27,17 @@ def pregunta_08():
      (9, ['A', 'B', 'C', 'E'])]
 
     """
+    cont = dict()
+    with open('files/input/data.csv') as f:
+        for linea in f:
+            a = linea[0]
+            v = int(linea[2])
+            if v not in cont:    cont[v] = set(a)
+            else:                cont[v].add(a)
+        
+        resul = sorted(cont.items())
+        r = []
+        for key,val in resul: r.append((key, sorted(val)))
+    return r
+
+#print(pregunta_08())

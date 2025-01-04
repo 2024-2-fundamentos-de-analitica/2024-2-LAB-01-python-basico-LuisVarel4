@@ -20,3 +20,15 @@ def pregunta_10():
 
 
     """
+    cont = []
+    with open('files/input/data.csv') as f:
+        for linea in f:
+            d = linea.split()
+            a = d[0]
+            cuarta = len(d[3].split(","))
+            quinta = len(d[4].split(","))
+            cont.append((a,cuarta,quinta))
+        
+    return cont
+
+#print(pregunta_10())

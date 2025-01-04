@@ -16,3 +16,17 @@ def pregunta_11():
 
 
     """
+    cont = dict()
+    with open('files/input/data.csv') as f:
+        for linea in f:
+            datos = linea.split()
+            d = datos[3].split(",")
+            v = int(datos[1])
+            for letra in d:
+                if letra not in cont:    cont[letra] = v
+                else:                cont[letra] += v
+        
+        resul = dict((sorted(cont.items())))
+    return resul
+
+#print(pregunta_11())

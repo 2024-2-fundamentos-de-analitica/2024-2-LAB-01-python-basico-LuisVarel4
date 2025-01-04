@@ -25,3 +25,16 @@ def pregunta_07():
      (9, ['A', 'B', 'E', 'A', 'A', 'C'])]
 
     """
+    cont = dict()
+    with open('files/input/data.csv') as f:
+        for linea in f:
+            a = linea[0]
+            v = int(linea[2])
+            if v not in cont:    cont[v] = [a]
+            else:                cont[v].append(a)
+        
+        resul = sorted(cont.items())
+        
+    return resul
+
+#print(pregunta_07())

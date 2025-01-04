@@ -26,3 +26,14 @@ def pregunta_04():
      ('12', 3)]
 
     """
+    cont = dict()
+    with open('files/input/data.csv') as f:
+        for linea in f:
+            a = linea.split()[2][5:7]
+            if a not in cont:    cont[a] = 1
+            else: cont[a] += 1
+        
+        resul = sorted(cont.items())
+    return resul
+
+#print(pregunta_04())

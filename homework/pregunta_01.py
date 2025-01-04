@@ -13,7 +13,10 @@ def pregunta_01():
     214
 
     """
-def load_data():
-    with open('data.csv') as f:
-        data = f.read().strip().split('\n')
-    return data
+    cont = 0
+    with open('files/input/data.csv') as f:
+        for linea in f:
+            cont += int(linea[2])
+    return cont
+
+#print(pregunta_01())

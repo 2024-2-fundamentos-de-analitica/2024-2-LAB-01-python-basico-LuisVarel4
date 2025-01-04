@@ -15,3 +15,20 @@ def pregunta_12():
     {'A': 177, 'B': 187, 'C': 114, 'D': 136, 'E': 324}
 
     """
+    cont = dict()
+    with open('files/input/data.csv') as f:
+        for linea in f:
+            datos = linea.split()
+            d = datos[4].split(",")
+            a = datos[0]
+            for x in d:
+                t,v = x.split(":")
+                v = int(v)
+                if a not in cont:    cont[a] = v
+                else:                cont[a] += v
+        
+        resul = dict((sorted(cont.items())))
+
+    return resul
+
+print(pregunta_12())
